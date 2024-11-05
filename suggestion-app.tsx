@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -50,14 +48,14 @@ export default function RecommendationSystem() {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto">
-      <CardHeader>
+    <Card className="w-full max-w-md mx-auto" style={{ backgroundColor: '#dfe4ea', backgroundImage: 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy533cudG9vL20vMTk5OS8vSDcwby5zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCbG94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4bWxuczp4bGluayI9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvbzw+CiAgPHrectIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMWYxZjEiIGZpbGXO repetir-x></rect>}") }}> {/* Light blue background with subtle pattern */}
+      <CardHeader style={{ color: 'black', fontWeight: 'bold' }}>
         <CardTitle>Get a Suggestion</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="category" className="block text-sm font-medium text-black">
               Category
             </label>
             <Select onValueChange={(value) => setCategory(value)}>
@@ -75,7 +73,7 @@ export default function RecommendationSystem() {
           </div>
           {category && (
             <div>
-              <label htmlFor="mood" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="mood" className="block text-sm font-medium text-black">
                 Mood/Preference
               </label>
               <Select onValueChange={(value) => setMood(value)}>
@@ -99,9 +97,9 @@ export default function RecommendationSystem() {
       </CardContent>
       {suggestion && (
         <CardFooter className="flex flex-col items-start">
-          <h3 className="text-lg font-medium">Suggestion:</h3>
+          <h3 className="text-lg font-medium text-black">Suggestion:</h3>
           <p className="mt-2 text-gray-600">{suggestion}</p>
-          <Button onClick={handleNewSuggestion} className="mt-4">
+          <Button onClick={handleNewSuggestion} className="mt-4 text-black">
             Get Another Suggestion
           </Button>
         </CardFooter>
